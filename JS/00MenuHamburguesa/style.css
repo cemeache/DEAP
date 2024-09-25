@@ -1,3 +1,30 @@
-#logo{
-    width: 10%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
+
+header{
+    display: flex; /*Alinear items*/
+    align-items: center; /*Centrar Verticalmente*/
+    justify-content: space-between; /*Separar logo de lista*/
+    padding: 2rem; /*Separar del borde*/
+    background-color: #ecececec;
+}
+
+#logo{
+    max-width:5rem;
+}
+
+.nav-list{
+    list-style-type: none;
+    display: flex; /*Items uno al lado del otro*/
+    gap: 1rem; /*Separar Items entre si*/
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color:#000;
+}
+
