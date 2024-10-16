@@ -44,3 +44,12 @@ main {
 section {
     margin-bottom: 2rem;
 }
+
+/*----------Class-------------*/
+.underline {
+    text-decoration: underline;
+}
+
+.bolder{
+    font-weight: bold;
+}
