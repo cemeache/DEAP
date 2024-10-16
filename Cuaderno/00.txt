@@ -1,0 +1,13 @@
+Aquí tienes un esquema para un cuaderno Jupyter sobre Git y GitHub:
+
+* **Instalar Git**
+* **Configurar Git**
+* **Crear un Repositorio**
+* **Realizar Commits**
+* **Trabajar con Ramas**
+* **Fusionar Ramas**
+* **Configurar GitHub**
+* **Subir Repositorio a GitHub**
+* **Clonar Repositorio desde GitHub**
+* **Realizar Pull Requests**
+
