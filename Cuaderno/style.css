@@ -88,6 +88,11 @@ summary > h2 {
     display: inline-block;
 }
 
+#p-git-travesia{
+    text-align: justify;
+    padding: 2%;
+}
+
 /*----------Class-------------*/
 .underline {
     text-decoration: underline;
