@@ -1,4 +1,7 @@
 /*Celia Moruno Herrojo*/
+
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,8 +42,49 @@ main {
     margin: 3% 10% 0 25%;
 }
 
+#art-git{
+    margin: 5% auto;
+    width: 80%;
+}
+
+#art-git > h1{
+    font-family: "Slackey";
+    display: inline-block;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#img-sep{
+    width: 4rem;
+    position: relative;
+        top: 1rem;
+}
+
 section {
     margin-bottom: 2rem;
+}
+
+details {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+summary:hover {
+    color: #007BFF;
+}
+
+summary > h2 {
+    display: inline-block;
 }
 
 /*----------Class-------------*/
@@ -50,4 +94,13 @@ section {
 
 .bolder{
     font-weight: bold;
+}
+
+.li-title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    list-style-type: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0.1rem;
 }

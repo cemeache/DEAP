@@ -17,108 +17,101 @@
         </ul>
     </aside>
     <main>
-        <section id="#">
-            <h2>Stages Areas</h2>
-            <ul>
-                <li><span class="underline bolder">Directorio de Trabajo</span> ➜ Dónde se encuentran los archivos</li>
-                <li><span class="underline bolder">Staging</span> ➜ Área de preparación. El archivo aún no está guardado definitivamente</li>
-                <li><span class="underline bolder">Repositorio Local</span> ➜ Repositorio que se encuentra en nuestro ordenador</li>
-                <li><span class="underline bolder">Repositorio Remoto</span> ➜ Centraliza el repositorio. Varias personas pueden trabajar sobre este.</li>
-            </ul>
-        </section>
-        <section id="#">
-            <h2>Estado de Ficheros</h2>
-                <ul>
-                    <li><span class="underline bolder">Untracked</span>➜ El fichero no está bajo el control de versiones. No está en el repositorio.</li>
-                    <li><span class="underline bolder">Unmodified</span> ➜ El fichero está en el repositorio pero no ha sido modificado desde su última versión confirmada.</li>
-                    <li><span class="underline bolder">Modified</span> ➜ los datos/ficheros se han modificado, pero todavía no lo has confirmado a tu base de datos.</li>
-                    <li><span class="underline bolder">Staged</span> ➜ se ha marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.</li>
-                    <li><span class="underline bolder">Committed</span> ➜ los datos/ficheros están almacenados de manera segura en tu base de datos local.</li>
-                </ul>
-        </section>
-        <section id="#">
-            <h2>Configuración Inicial</h2>
-            <ul>
-                <li><span class="bolder">git --version</span> ➜ Muestra la versión actual de git</li>
-                <li><span class="bolder">git config --list</span> ➜ Muestra todas las configuraciones de Git actualmente estableciodas por el usuario</li>
-                <li><span class="bolder">git config --global user.name "nombre"</span> ➜ Establece el nombre de usuario</li>
-                <li><span class="bolder">git config --global user.email "email"</span> ➜ Establece el email del usuario</li>
-            </ul>
-        </section>
-        <section id="#">
-            <h2>Comandos Básicos</h2>
-            <ul>
-                <li><span class="bolder">git help "comando" || git "comando" --help</span> ➜ Redirige a una web con información sobre el comando indicado</li>
-                <li><span class="bolder">git init</span> ➜ Inicializa un repositorio local</li>
-                <li><span class="bolder">git add "fichero" || git add .</span> ➜ Añade un fichero al área de preparación si se especifica, si no, añade todos</li>
-                <li><span class="bolder">git commit -m "mensaje"</span> ➜ Registramos los cambios en el <span class="bolder">repositorio local</span></li>
-                <li><span class="bolder">git push "repositorio" "rama"</span> ➜ Sube los cambios al <span class="bolder">repositorio remoto</span></li>
 
-            </ul>
-        </section>
-        <section id="#">
-            <h2>Empezando a Funcionar</h2>
-            <ul>
-                <li><span class="bolder">git status</span> ➜ Muestra el estado de los ficheros</li>
-                <li><span class="bolder">git commit --amend -m "mensaje"</span> ➜ Agrega cambios y modifica el mensaje del último commit</li>
-                <li><span class="bolder">git log</span> ➜ Muestra el historial de commits</li>
-                <li><span class="bolder">git log --oneline</span> ➜ Muestra el historial de commits en una sola línea</li>
-                <li><span class="bolder">git diff || git diff "x""x"</span> ➜ Muestra las diferencias entre el directorio de trabajo y el área de preparación o los commits o ramas especificadas</li>
-                <li><span class="bolder">git remote</span> ➜ Muestra los repositorios remotos</li>
-                <li><span class="bolder">git remote add "nombre" "url"</span> ➜ Añade un repositorio remoto</li>
-                <li><span class="bolder">git remote rename "nombre" "nuevoNombre"</span> ➜ Renombra un repositorio remoto</li>
-                <li><span class="bolder">git remote remove "nombre"</span> ➜ Elimina un repositorio remoto</li>
-                <li><span class="bolder">git reset HEAD "fichero"</span> ➜ Quita un fichero del área de preparación</li>
-                <li><span class="bolder">git branch -M "nombre"</span> ➜ Renombra la rama actual</li>
-                <li><span class="bolder">git push -u "repositorio" "rama"</span> ➜ Sube los cambios al repositorio remoto y establece la rama</li> 
-                <li><h3>ROLLBACK</h3></li>
-                <li><span class="bolder">git checkout "rama"</span> ➜ Cambia a la rama indicada</li>
-                <li><span class="bolder">git checkout -b "rama"</span> ➜ Crea una rama y cambia a ella</li>
-                <li><span class="bolder">git reset --hard "commit"</span> ➜ Elimina los commits posteriores al indicado</li>
-                <li><span class="bolder">git reset --soft "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios</li>
-                <li><span class="bolder">git reset --mixed "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios en el área de preparación</li>
-                <li><span class="bolder">git revert "commit"</span> ➜ Crea un nuevo commit que revierte los cambios del commit indicado</li>
-                <li><span class="bolder">git revert [nombre_rama]~5 [nombre_rama]~3</span> ➜ Revierte los cambios de los commits indicados hacia atrás</li>
-                <li><span class="bolder">git revert [nombre_rama]~5..[nombre_rama]~3</span> ➜ Revierte los cambios desde el commit 5 hasta el commit 3 hacia atrás incluyendo ambos</li>
-                <li><h3>ETIQUETAS</h3></li>
-                <li><span class="bolder">git tag</span> ➜ Muestra las etiquetas existentes</li>
-                <li><span class="bolder">git tag -a "nombre" -m "mensaje"</span> ➜ Crea una etiqueta en el commit actual</li>
-            </ul>
-        </section>
-        <section id="#">
-            <h2>Ramas</h2>
-            <ul>
-                <li><span class="bolder"></span> ➜ </li>
-                <li><span class="bolder">git branch</span> ➜ Devuelve todas las ramas existentes</li>
-                <li><span class="bolder">git branch "nombre"</span> ➜ Crea una nueva rama</li>
-                <li><span class="bolder">git branch -d "nombre" && hit branch -D "nombre"</span> ➜ Elimina la rama especificada tras confirmar con el segundo comando</li>
-                <li><span class="bolder">git checkout "rama"</span> ➜ Cambia a la rama indicada</li>
-                <li><span class="bolder">git checkout -b "rama"</span> ➜ Crea una rama y cambia a ella</li>
-                <li><span class="bolder">git merge "rama"</span> ➜ Fusiona la rama especificada con la rama en la que nos encontramos</li>
-                <li><span class="bolder">git merge --abort</span> ➜ Cancela la fusión</li>
-                
-            </ul>
-        </section>
-        <section id="#">
-            <h2>GitHub</h2>
-            <p>Contenido sobre GitHub...</p>
-        </section>
-        <section id="#">
-            <h2>GitHub</h2>
-            <p>Contenido sobre GitHub...</p>
-        </section>
-        <section id="#">
-            <h2>GitHub</h2>
-            <p>Contenido sobre GitHub...</p>
-        </section>
-        <section id="#">
-            <h2>GitHub</h2>
-            <p>Contenido sobre GitHub...</p>
-        </section>
-        <section id="#">
-            <h2>GitHub</h2>
-            <p>Contenido sobre GitHub...</p>
-        </section>
+        <article id="art-git">
+            <h1>Git</h1><img id="img-sep" src="./img/separador.png"><h1>GitHub</h1>
+            <section id="#">
+                <details>
+                    <summary><h2>Stages Areas</h2></summary>
+                    <ul>
+                        <li><span class="underline bolder">Directorio de Trabajo</span> ➜ Dónde se encuentran los archivos</li>
+                        <li><span class="underline bolder">Staging</span> ➜ Área de preparación. El archivo aún no está guardado definitivamente</li>
+                        <li><span class="underline bolder">Repositorio Local</span> ➜ Repositorio que se encuentra en nuestro ordenador</li>
+                        <li><span class="underline bolder">Repositorio Remoto</span> ➜ Centraliza el repositorio. Varias personas pueden trabajar sobre este.</li>
+                    </ul>
+                </details>
+            </section>
+            <section id="#">
+                <details>
+                    <summary><h2>Estados de Ficheros</h2></summary>
+                    <ul>
+                        <li><span class="underline bolder">Untracked</span>➜ El fichero no está bajo el control de versiones. No está en el repositorio.</li>
+                        <li><span class="underline bolder">Unmodified</span> ➜ El fichero está en el repositorio pero no ha sido modificado desde su última versión confirmada.</li>
+                        <li><span class="underline bolder">Modified</span> ➜ los datos/ficheros se han modificado, pero todavía no lo has confirmado a tu base de datos.</li>
+                        <li><span class="underline bolder">Staged</span> ➜ se ha marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.</li>
+                        <li><span class="underline bolder">Committed</span> ➜ los datos/ficheros están almacenados de manera segura en tu base de datos local.</li>
+                    </ul>
+                </details>
+            </section>
+            <section id="#">
+                <details>
+                    <summary><h2>Configuración Inicial</h2></summary>
+                    <ul>
+                        <li><span class="bolder">git --version</span> ➜ Muestra la versión actual de git</li>
+                        <li><span class="bolder">git config --list</span> ➜ Muestra todas las configuraciones de Git actualmente estableciodas por el usuario</li>
+                        <li><span class="bolder">git config --global user.name "nombre"</span> ➜ Establece el nombre de usuario</li>
+                        <li><span class="bolder">git config --global user.email "email"</span> ➜ Establece el email del usuario</li>
+                    </ul>
+                </details>
+            </section>
+            <section id="#">
+                <details>
+                    <summary><h2>Comandos Básicos</h2></summary>
+                    <ul>
+                        <li><span class="bolder">git help "comando" || git "comando" --help</span> ➜ Redirige a una web con información sobre el comando indicado</li>
+                        <li><span class="bolder">git init</span> ➜ Inicializa un repositorio local</li>
+                        <li><span class="bolder">git add "fichero" || git add .</span> ➜ Añade un fichero al área de preparación si se especifica, si no, añade todos</li>
+                        <li><span class="bolder">git commit -m "mensaje"</span> ➜ Registramos los cambios en el <span class="bolder">repositorio local</span></li>
+                        <li><span class="bolder">git push "repositorio" "rama"</span> ➜ Sube los cambios al <span class="bolder">repositorio remoto</span></li>
+                    </ul>
+                </details>
+            </section>
+            <section id="#">
+                <details>
+                    <summary><h2>Poniéndonos en marcha</h2></summary>
+                    <ul>
+                        <li><span class="bolder">git status</span> ➜ Muestra el estado de los ficheros</li>
+                        <li><span class="bolder">git commit --amend -m "mensaje"</span> ➜ Agrega cambios y modifica el mensaje del último commit</li>
+                        <li><span class="bolder">git log</span> ➜ Muestra el historial de commits</li>
+                        <li><span class="bolder">git log --oneline</span> ➜ Muestra el historial de commits en una sola línea</li>
+                        <li><span class="bolder">git diff || git diff "x""x"</span> ➜ Muestra las diferencias entre el directorio de trabajo y el área de preparación o los commits o ramas especificadas</li>
+                        <li><span class="bolder">git remote</span> ➜ Muestra los repositorios remotos</li>
+                        <li><span class="bolder">git remote add "nombre" "url"</span> ➜ Añade un repositorio remoto</li>
+                        <li><span class="bolder">git remote rename "nombre" "nuevoNombre"</span> ➜ Renombra un repositorio remoto</li>
+                        <li><span class="bolder">git remote remove "nombre"</span> ➜ Elimina un repositorio remoto</li>
+                        <li><span class="bolder">git reset HEAD "fichero"</span> ➜ Quita un fichero del área de preparación</li>
+                        <li><span class="bolder">git branch -M "nombre"</span> ➜ Renombra la rama actual</li>
+                        <li><span class="bolder">git push -u "repositorio" "rama"</span> ➜ Sube los cambios al repositorio remoto y establece la rama</li> 
+                        <li class="li-title">rollback</li>
+                        <li><span class="bolder">git checkout "rama"</span> ➜ Cambia a la rama indicada</li>
+                        <li><span class="bolder">git checkout -b "rama"</span> ➜ Crea una rama y cambia a ella</li>
+                        <li><span class="bolder">git reset --hard "commit"</span> ➜ Elimina los commits posteriores al indicado</li>
+                        <li><span class="bolder">git reset --soft "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios</li>
+                        <li><span class="bolder">git reset --mixed "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios en el área de preparación</li>
+                        <li><span class="bolder">git revert "commit"</span> ➜ Crea un nuevo commit que revierte los cambios del commit indicado</li>
+                        <li><span class="bolder">git revert [nombre_rama]~5 [nombre_rama]~3</span> ➜ Revierte los cambios de los commits indicados hacia atrás</li>
+                        <li><span class="bolder">git revert [nombre_rama]~5..[nombre_rama]~3</span> ➜ Revierte los cambios desde el commit 5 hasta el commit 3 hacia atrás incluyendo ambos</li>
+                        <li class="li-title">etiquetas</li>
+                        <li><span class="bolder">git tag</span> ➜ Muestra las etiquetas existentes</li>
+                        <li><span class="bolder">git tag -a "nombre" -m "mensaje"</span> ➜ Crea una etiqueta en el commit actual</li>
+                    </ul>
+                </details>
+            </section>
+            <section id="#">
+                <details>
+                    <summary><h2>Ramas</h2></summary>
+                    <ul>
+                        <li><span class="bolder">git branch</span> ➜ Devuelve todas las ramas existentes</li>
+                        <li><span class="bolder">git branch "nombre"</span> ➜ Crea una nueva rama</li>
+                        <li><span class="bolder">git branch -d "nombre" && hit branch -D "nombre"</span> ➜ Elimina la rama especificada tras confirmar con el segundo comando</li>
+                        <li><span class="bolder">git checkout "rama"</span> ➜ Cambia a la rama indicada</li>
+                        <li><span class="bolder">git checkout -b "rama"</span> ➜ Crea una rama y cambia a ella</li>
+                        <li><span class="bolder">git merge "rama"</span> ➜ Fusiona la rama especificada con la rama en la que nos encontramos</li>
+                        <li><span class="bolder">git merge --abort</span> ➜ Cancela la fusión</li>
+                    </ul>
+                </details>
+            </section>
+        </article>
     </main>
     <script src="scripts.js"></script>
 </body>
