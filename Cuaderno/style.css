@@ -4,8 +4,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    display: flex;
-    height: 100vh;
 }
 
 aside {
@@ -14,7 +12,6 @@ aside {
     padding: 1rem;
     width: 15%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
     position: fixed;
         top: 0;
         bottom: 0;
@@ -38,10 +35,8 @@ main {
     background-color: #fff;
     padding: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 85%;
-    max-width: 900px;
-    margin: 2rem auto;
-    flex-grow: 1;
+    width: 65%;
+    margin: 3% 10% 0 25%;
 }
 
 section {

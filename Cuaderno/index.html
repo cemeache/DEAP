@@ -50,8 +50,7 @@
             <ul>
                 <li><span class="bolder">git help "comando" || git "comando" --help</span> ➜ Redirige a una web con información sobre el comando indicado</li>
                 <li><span class="bolder">git init</span> ➜ Inicializa un repositorio local</li>
-                <li><span class="bolder">git add "fichero"</span> ➜ Añade un fichero al área de preparación</li>
-                <li><span class="bolder">git add .</span> ➜ Añade todos los ficheros al área de preparación</li>
+                <li><span class="bolder">git add "fichero" || git add .</span> ➜ Añade un fichero al área de preparación si se especifica, si no, añade todos</li>
                 <li><span class="bolder">git commit -m "mensaje"</span> ➜ Registramos los cambios en el <span class="bolder">repositorio local</span></li>
                 <li><span class="bolder">git push "repositorio" "rama"</span> ➜ Sube los cambios al <span class="bolder">repositorio remoto</span></li>
 
@@ -60,7 +59,6 @@
         <section id="#">
             <h2>Empezando a Funcionar</h2>
             <ul>
-                
                 <li><span class="bolder">git status</span> ➜ Muestra el estado de los ficheros</li>
                 <li><span class="bolder">git commit --amend -m "mensaje"</span> ➜ Agrega cambios y modifica el mensaje del último commit</li>
                 <li><span class="bolder">git log</span> ➜ Muestra el historial de commits</li>
@@ -80,8 +78,32 @@
                 <li><span class="bolder">git reset --soft "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios</li>
                 <li><span class="bolder">git reset --mixed "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios en el área de preparación</li>
                 <li><span class="bolder">git revert "commit"</span> ➜ Crea un nuevo commit que revierte los cambios del commit indicado</li>
-                <li><h3>PARAMETROS REVERT || DIAPO-21</h3></li>
+                <li><span class="bolder">git revert [nombre_rama]~5 [nombre_rama]~3</span> ➜ Revierte los cambios de los commits indicados hacia atrás</li>
+                <li><span class="bolder">git revert [nombre_rama]~5..[nombre_rama]~3</span> ➜ Revierte los cambios desde el commit 5 hasta el commit 3 hacia atrás incluyendo ambos</li>
+                <li><h3>ETIQUETAS</h3></li>
+                <li><span class="bolder">git tag</span> ➜ Muestra las etiquetas existentes</li>
+                <li><span class="bolder">git tag -a "nombre" -m "mensaje"</span> ➜ Crea una etiqueta en el commit actual</li>
             </ul>
+        </section>
+        <section id="#">
+            <h2>GitHub</h2>
+            <p>Contenido sobre GitHub...</p>
+        </section>
+        <section id="#">
+            <h2>GitHub</h2>
+            <p>Contenido sobre GitHub...</p>
+        </section>
+        <section id="#">
+            <h2>GitHub</h2>
+            <p>Contenido sobre GitHub...</p>
+        </section>
+        <section id="#">
+            <h2>GitHub</h2>
+            <p>Contenido sobre GitHub...</p>
+        </section>
+        <section id="#">
+            <h2>GitHub</h2>
+            <p>Contenido sobre GitHub...</p>
         </section>
         <section id="#">
             <h2>GitHub</h2>
