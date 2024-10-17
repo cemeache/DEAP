@@ -65,9 +65,7 @@
                 <li><span class="bolder">git commit --amend -m "mensaje"</span> ➜ Agrega cambios y modifica el mensaje del último commit</li>
                 <li><span class="bolder">git log</span> ➜ Muestra el historial de commits</li>
                 <li><span class="bolder">git log --oneline</span> ➜ Muestra el historial de commits en una sola línea</li>
-                <li><span class="bolder">git diff</span> ➜ Muestra las diferencias entre el directorio de trabajo y el área de preparación</li>
-                <li><span class="bolder">git diff "commit""commit"</span> ➜ Muestra las diferencias entre los dos commit indicados</li>
-                <li><span class="bolder">git diff "rama""rama"</span> ➜ Muestra las diferencias entre dos ramas</li>
+                <li><span class="bolder">git diff || git diff "x""x"</span> ➜ Muestra las diferencias entre el directorio de trabajo y el área de preparación o los commits o ramas especificadas</li>
                 <li><span class="bolder">git remote</span> ➜ Muestra los repositorios remotos</li>
                 <li><span class="bolder">git remote add "nombre" "url"</span> ➜ Añade un repositorio remoto</li>
                 <li><span class="bolder">git remote rename "nombre" "nuevoNombre"</span> ➜ Renombra un repositorio remoto</li>
@@ -78,8 +76,6 @@
                 <li><h3>ROLLBACK</h3></li>
                 <li><span class="bolder">git checkout "rama"</span> ➜ Cambia a la rama indicada</li>
                 <li><span class="bolder">git checkout -b "rama"</span> ➜ Crea una rama y cambia a ella</li>
-                <li><span class="bolder">git checkout "commit"</span> ➜ Cambia a un commit</li>
-                <li><span class="bolder">git clean -f</span> ➜ Elimina los ficheros untracked</li>
                 <li><span class="bolder">git reset --hard "commit"</span> ➜ Elimina los commits posteriores al indicado</li>
                 <li><span class="bolder">git reset --soft "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios</li>
                 <li><span class="bolder">git reset --mixed "commit"</span> ➜ Elimina los commits posteriores al indicado, pero mantiene los cambios en el área de preparación</li>
