@@ -16,6 +16,7 @@ aside {
     padding: 1rem;
     width: 15%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Habilitar desplazamiento vertical */
     position: fixed;
         top: 0;
         bottom: 0;
@@ -47,12 +48,12 @@ main {
     margin: 3% 10% 3% 25%;
 }
 
-#art-git{
+article{
     margin: 1% auto;
     width: 80%;
 }
 
-#art-git > h1{
+article > h1{
     font-family: "Slackey";
     display: inline-block;
     text-align: center;
@@ -68,6 +69,14 @@ main {
 
 section {
     margin-bottom: 2rem;
+}
+
+section details > img {
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 1% auto;
 }
 
 details {
@@ -92,7 +101,7 @@ summary > h2 {
     display: inline-block;
 }
 
-#p-git-travesia{
+.travesia{
     text-align: justify;
     padding: 2%;
 }
