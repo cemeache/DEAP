@@ -22,17 +22,42 @@
         </ul>
         <h3>Servicio Web HTTP</h3>
         <ul>
-            <li><a href="#stages-areas">Stages Areas</a></li>
-            <li><a href="#estados-ficheros">Estados de Ficheros</a></li>
-            <li><a href="#configuracion-inicial">Configuración Inicial</a></li>
-            <li><a href="#comandos-basicos">Comandos Básicos</a></li>
-            <li><a href="#poniendonos-en-marcha">Poniéndonos en marcha</a></li>
-            <li><a href="#ramas">Ramas</a></li>
-            <li><a href="#p-git-travesia">Travesía a través de Git</a></li>
+            <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
+            <li><a href="#get-vs-post">GET vs POST</a></li>
+            <li><a href="#http-https">HTTP vs HTTPS</a></li>
+            <li><a href="#certificado-ssl-tls">Certificado SSL / TLS</a></li>
+            <li><a href="#codigos-estados">Código de Estados</a></li>
+        </ul>
+        <h3>Servicio Web DNS</h3>
+        <ul>
+            <li><a href="#que-es">¿Qué es?</a></li>
+            <li><a href="#funcionamiento-dns">¿Cómo Funciona?</a></li>
+            <li><a href="#tipos-registro">Tipos de Registro</a></li>
+            <li><a href="#resoluciones-directa-inversa">Resolución Directa VS Resolución Inversa</a></li>
+            <li><a href="#herramientas-consulta">Herramientas de Consultas DNS</a></li>
+        </ul>
+        <h3>Servidor Web Apache</h3>
+        <ul>
+            <li><a href="#caracteristicas-apache">Características</a></li>
+            <li><a href="#arquitectura-apache">Arquitectura Servidor Web</a></li>
+            <li><a href="#contextos-apache">Contextos Servidor</a></li>
+            <li><a href="#gestion-servicio-apache">Gestión del Servicio Apache</a></li>
+            <li><a href="#estructura-servidor">Estructura del Servidor Web</a></li>
+            <li><a href="#configuracion-global">Archivo de Configuración Global</a></li>
+            <li><a href="#variables-entorno">Archivo de Variables de Entorno</a></li>
+            <li><a href="#directivas-basicas">Directivas Básicas</a></li>
+            <li><a href="#directivas-bloque">Directivas de Bloque</a></li>
+            <li><a href="#sethandler">SetHandler</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#allowoverride">AllowOverride</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#allow-deny">Allow / Deny</a></li>
+            <li><a href="#require">Require</a></li>
+            <li><a href="#orden-lectura">Orden de Lectura Runtime - Apache</a></li>
         </ul>
     </aside>
     <main>
-        <!-- <article id="art-git">
+        <article id="art-git">
             <h1>Git</h1><img id="img-sep" src="./img/separador.png"><h1>GitHub</h1>
             <section>
                 <details>
@@ -137,7 +162,7 @@
                     </p>
                 </details>
             </section>
-        </article> -->
+        </article>
         <article id="art-http">
             <h1>Servicio Web HTTP</h1>
             <section>
@@ -231,7 +256,7 @@
             <section>
                 <details>
                     <summary><h2>Tipos de Registro</h2></summary>
-                    <ul>
+                    <ul id="tipos-registro">
                         <li><span class="underline bolder">A</span> ➜ Traduce nombres a direcciones IPv4</li>
                         <li><span class="underline bolder">AAAA</span> ➜ Traduce nombres a direcciones IPv6</li>
                         <li><span class="underline bolder">CNAME</span> ➜ Define un alias a un nombre de dominio. Podemos acceder con diferente nombre a diferentes servicios como ftp o www</li>
@@ -267,6 +292,361 @@
                     <ul id="herramientas-consulta">
                         <li><span class="bolder">nslookup</span> ➜ Permite realizar consultas DNS obteniendo información sobre nombres de dominio o direcciones IP.</li>
                         <li><span class="bolder">dig</span> ➜ Herramienta de consulta DNS que nos proporciona información detallada sobre registros DNS.</li>
+                    </ul>
+                </details>
+            </section>
+        </article>
+        <article id="art-apache">
+            <h1>Servidor Web Apache</h1>
+            <section>
+                <details>
+                    <summary><h2>Características</h2></summary>
+                    <ul id="caracteristicas-apache">
+                        <li><span class="underline bolder">Código Abierto</span> ➜ Es un servidor web HTTP de código abierto.</li>
+                        <li><span class="underline bolder">Proyecto HTTP Server</span> ➜ Se desarrolla dentro del proyecto HTTP Server (httpd) de la Apache Software Foundation.</li>
+                        <li><span class="underline bolder">HTTP/1.1</span> ➜ Implementa el protocolo HTTP/1.1.</li>
+                        <li><span class="underline bolder">Modular</span> ➜ Su arquitectura es modular.</li>
+                        <li><span class="underline bolder">Multi-plataforma</span> ➜ Funciona en Windows, Linux, y MacOS.</li>
+                        <li><span class="underline bolder">Estabilidad</span> ➜ Es muy estable.</li>
+                        <li><span class="underline bolder">Popularidad</span> ➜ Tradicionalmente ha sido la solución más popular, con gran soporte.</li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Arquitectura Servidor Web</h2></summary>
+                    <img id="arquitectura-apache" src="./img/arquitecturaServerWebApache.png" alt="Arquitectura Apache">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Contextos Servidor</h2></summary>
+                    <img id="contextos-apache" src="./img/contextosServidor.png" alt="Contextos Apache">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Gestión del Servicio Apache</h2></summary>
+                    <h3 id="gestion-servicio-apache" class="bolder">service apache2 [start|stop|restart|reload|status]</h3>
+                    <ul>
+                        <li><span class="underline bolder">start</span> ➜ Inicia el servicio.</li>
+                        <li><span class="underline bolder">stop</span> ➜ Para el servicio.</li>
+                        <li><span class="underline bolder">restart</span> ➜ Reinicia el servicio.</li>
+                        <li><span class="underline bolder">reload</span> ➜ Reinicia el servicio sin eliminar las conexiones activas.</li>
+                        <li><span class="underline bolder">status</span> ➜ Muestra el estado del servicio.</li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Estructura del Servidor Web</h2></summary>
+                    <ul id="estructura-servidor">
+                        <li><span class="underline bolder">Directorios de Contenido</span>
+                            <ul>
+                                <li>/var/www ➜ Ruta por defecto para alojamiento Web (htdocs).</li>
+                                <li>/var/www/midominio ➜ Ruta para los host virtuales.</li>
+                                <li>/var/www/html ➜ Ruta del virtual host / site por defecto de Apache.</li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Directorio de Registros</span>
+                            <ul>
+                                <li>/var/log/apache2/access.log ➜ Log que registra todas las peticiones hechas al servidor Web.</li>
+                                <li>/var/log/apache2/error.log ➜ Log que registra todos los errores producidos en el servidor Web.</li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Directorios de Configuración</span>
+                            <ul>
+                                <li>/etc/apache2 ➜ Directorio por defecto de los archivos de configuración.</li>
+                                <li>/etc/apache2/apache2.conf ➜ Configuración principal global de Apache.</li>
+                                <li>/etc/apache2/ports.conf ➜ Archivos de los puertos por los que Apache escucha, por defecto, 80 / 443 si SSL está habilitado.</li>
+                                <li>/etc/apache2/sites-available ➜ Archivos de configuración de los VH.</li>
+                                <li>/etc/apache2/sites-enabled ➜ VH del servidor web.</li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Estructura / Tipo de Directorios</span>
+                            <ul>
+                                <li>/etc/apache2/conf-available y /etc/apache2/conf-enabled ➜ Archivos de configuración que no pertenecen a ningún VH.</li>
+                                <li>/etc/apache2/mods-available y /etc/apache2/mods-enabled ➜ Contienen los módulos habilitados (enabled) y los disponibles (available) para su uso.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Archivo de Configuración Global</h2></summary>
+                    <ul id="configuracion-global">
+                        <li><span class="underline bolder">Ubicación</span> ➜ /etc/apache2/apache2.conf</li>
+                        <li><span class="underline bolder">Descripción</span> ➜ Contiene la configuración y directivas globales del servidor web Apache.</li>
+                        <li><span class="underline bolder">Aplicación</span> ➜ Aplica a todas las webs del servidor, a menos que se repita en contextos inferiores (Virtual Host).</li>
+                        <li><span class="underline bolder">Variables de Entorno</span> ➜ /etc/apache2/envvars</li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Archivo de Variables de Entorno</h2></summary>
+                    <ul id="variables-entorno">
+                        <li><span class="underline bolder">Ubicación</span> ➜ /etc/apache2/envvars</li>
+                        <li><span class="underline bolder">Descripción</span> ➜ Valores recogidos para su uso centralizado.</li>
+                        <li><span class="underline bolder">Ejemplos de Variables de Entorno: </span>
+                            <ul>
+                                <li>APACHE_RUN_USER</li>
+                                <li>APACHE_RUN_GROUP</li>
+                                <li>APACHE_LOG_DIR</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Directivas Básicas</h2></summary>
+                    <ul id="directivas-basicas">
+                        <li><span class="bolder">ServerName</span>
+                            <ul>
+                                <li>Indica el nombre con el que el servidor se conoce a sí mismo. Resolución por DNS.</li>
+                                <li>Ejemplo: ServerName daw27.deap27.net</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">ServerRoot</span>
+                            <ul>
+                                <li>Indica el directorio en el que se encuentran los ficheros de configuración de Apache.</li>
+                                <li>Ejemplo: ServerRoot /etc/apache2</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">ServerAdmin</span>
+                            <ul>
+                                <li>Indica el correo electrónico del administrador del servicio en los mensajes de error del servidor.</li>
+                                <li>Ejemplo: ServerAdmin admin@daw27.deap27.net</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">DocumentRoot</span>
+                            <ul>
+                                <li>Indica el directorio en el que se encuentran los ficheros que Apache servirá a los clientes.</li>
+                                <li>Ejemplo: DocumentRoot /var/www/html</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">PidFile</span>
+                            <ul>
+                                <li>Indica el fichero en el que se guardará el ID del proceso de Apache.</li>
+                                <li>Ejemplo: PidFile /var/run/apache2/apache2.pid</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">User</span>
+                            <ul>
+                                <li>Indica el usuario con el que se ejecutará Apache.</li>
+                                <li>Por defecto: User www-data.</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">Group</span>
+                            <ul>
+                                <li>Indica el grupo con el que se ejecutará Apache.</li> 
+                                <li>Por defecto: Group www-data.</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">ErrorLog</span>
+                            <ul>
+                                <li>Establece el fichero de log de errores de Apache.</li>
+                                <li>Ejemplo: ErrorLog /var/log/apache2/errorlog.log</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">Listen</span>
+                            <ul>
+                                <li>Indica la dirección IP y el puerto en el que escuchará Apache.</li>
+                                <li>Ejemplo: Listen 80 Listen 10.3.11.227:80</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">DirectoryIndex</span>
+                            <ul>
+                                <li>Establece los nombres de ficheros que servirán como índices al acceder a un directorio sin indicar ningún recurso concreto.</li>
+                                <li>Ejemplo: DirectoryIndex index.html index.php</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">TypesConfig</span>
+                            <ul>
+                                <li>Indica el fichero con la lista de tipos Mime.</li>
+                                <li>Ejemplo: TypesConfig /etc/mime.types</li>
+                            </ul>
+                        </li>
+                        <li><span class="bolder">DefaultType</span>
+                            <ul>
+                                <li>Indica el tipo Mime por defecto para aquellos ficheros cuya extensión no figure en la lista de tipos Mime.</li>
+                                <li>Ejemplo: DefaultType text/plain</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Directivas de Bloque</h2></summary>
+                    <ul id="directivas-bloque">
+                        <li><span class="underline bolder">Directory</span>
+                            <ul>
+                                <li>Las directivas que se incluyan dentro de Directory sólo se aplican a ese directorio, los subdirectorios y los contenidos.</li>
+                                <li>Debe indicarse con la ruta absoluta. Módulo asociado: core</li>
+                                <li>Ejemplo:
+                                    <pre>
+                                        <code>
+                                            &lt;Directory /ruta_absoluta&gt;
+                                            &lt;/Directory&gt;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Files</span>
+                            <ul>
+                                <li>Las directivas que incluya el bloque Files únicamente se aplican a los ficheros indicados. Módulo asociado: core</li>
+                                <li>Ejemplo:
+                                    <pre>
+                                        <code>
+                                            &lt;Files "evg.html"&gt; &lt;FilesMatch "^\.ht"&gt;
+                                            &lt;/Files&gt; &lt;/FilesMatch&gt;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Location</span>
+                            <ul>
+                                <li>Las directivas del bloque Location se aplican únicamente en el ámbito de la URL indicada en la etiqueta y solicitada por el cliente, y puede ser totalmente distinto al path del directorio.</li>
+                                <li>Las opciones especificadas en las directivas &lt;Location&gt; son procesadas después de las opciones especificadas en los bloques &lt;Directory&gt; y pueden sobrescribir cualquier opción establecida en estos bloques, haciéndola nula. Módulo asociado: core</li>
+                                <li>Ejemplo:
+                                    <pre>
+                                        <code>
+                                            &lt;Location /ruta&gt;
+                                            &lt;/Location&gt;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>SetHandler</h2></summary>
+                    <ul id="sethandler">
+                        <li>Indica el “manejador” que se utilizará para atender las peticiones a un directorio, a un tipo de ficheros o a una localización.</li>
+                        <li>Módulo asociado: core</li>
+                        <li>Ejemplos de manejadores:
+                            <ul>
+                                <li><span class="bolder">default-handler</span>: es el handler usado por defecto para tratar contenido estático. (core)</li>
+                                <li><span class="bolder">imap-file</span>: Trata el fichero como un mapa de imágenes. (mod_imap)</li>
+                                <li><span class="bolder">server-info</span>: extrae la información de configuración del servidor. (mod_info)</li>
+                                <li><span class="bolder">server-status</span>: Extrae el informe de estado del servidor. (mod_status)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Options</h2></summary>
+                    <ul id="options">
+                        <li>La directiva Options controla características del servidor que están disponibles en un directorio. Valores:
+                            <ul>
+                                <li><span class="bolder">None</span>: ninguna funcionalidad adicional.</li>
+                                <li><span class="bolder">All</span>: todas las opciones activadas (menos Multiviews). Opción por defecto.</li>
+                                <li><span class="bolder">FollowSymLinks</span>: permite seguir los enlaces simbólicos de un directorio.</li>
+                                <li><span class="bolder">Indexes</span>: si se produce una petición a una URL que se corresponde con un directorio, y no hay DirectoryIndex, muestra el contenido del directorio.</li>
+                                <li><span class="bolder">Includes</span>: permite el uso de Server-Side Includes (SSI), del módulo mod_include, añadir contenido generado de manera dinámica a las páginas HTML existentes sin tener que servir una página entera a través de un programa CGI u otras tecnologías.</li>
+                                <li><span class="bolder">Multiviews</span>: permite gestionar múltiples vistas y presentar seleccionando las características más apropiadas al cliente de la solicitud (mod_negotiation). Ficheros (*.var)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>AllowOverride</h2></summary>
+                    <ul id="allowoverride">
+                        <li>Especifica si el servidor tiene en cuenta las directivas de los ficheros .htaccess en detrimento de las directivas previas encontradas. Del mismo modo puede especificar qué grupo de directivas se puede manejar (directive_type).</li>
+                        <li>Módulo asociado: core</li>
+                        <li>Valores:
+                            <ul>
+                                <li><span class="bolder">None</span>: los ficheros .htaccess son ignorados completamente. (OPCIÓN POR DEFECTO)</li>
+                                <li><span class="bolder">All</span>: cualquier directiva que tenga Context .htaccess puede ser usada en los ficheros .htaccess.</li>
+                            </ul>
+                        </li>
+                        <li>AllowOverride directive_type:
+                            <ul>
+                                <li><span class="bolder">AuthConfig</span>: Permite usar directivas de autenticación (ej: AuthType)</li>
+                                <li><span class="bolder">FileInfo</span>: Permite usar directivas que controlan los tipos de documento (ej: ErrorDocument)</li>
+                                <li><span class="bolder">Indexes</span>: Permite el uso de directivas que controlan el indexado de directorios (ej: DirectoryIndex)</li>
+                                <li><span class="bolder">Limit</span>: Permite el uso de directivas que controlan el acceso al host (ej: Allow)</li>
+                                <li><span class="bolder">Options</span>: Permite usar directivas que controlan funcionalidades específicas de directorios (ej: Options)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Order</h2></summary>
+                    <ul id="order">
+                        <li>Define el orden con que el servidor tiene en cuenta las restricciones de las directivas allow o deny posteriores, dentro del contexto (directory, .htaccess).</li>
+                        <li>Módulo asociado: mod_access_compat</li>
+                        <li>Ejemplos:
+                            <ul>
+                                <li>Order allow, deny</li>
+                                <li>Order deny, allow</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Allow / Deny</h2></summary>
+                    <ul id="allow-deny">
+                        <li>Permite o deniega el acceso al contexto al que hace referencia (directory, .htaccess).</li>
+                        <li>Módulo asociado: mod_access_compat</li>
+                        <li>Valores:
+                            <ul>
+                                <li><span class="bolder">Allow/Deny from all</span>: permite o deniega todo el acceso.</li>
+                                <li>Otros argumentos:
+                                    <ul>
+                                        <li>Dominio / Subdominio</li>
+                                        <li>Direcciones IP / Rango de IPs</li>
+                                        <li>Direcciones parciales IP</li>
+                                        <li>Subred</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Require</h2></summary>
+                    <ul id="require">
+                        <li>Permite o deniega el acceso al contexto al que hace referencia (directory, .htaccess) en base a unos criterios.</li>
+                        <li>Módulos asociados: mod_authz_core, mod_authz_user, mod_authz_host, mod_authz_groupfile</li>
+                        <li>Valores:
+                            <ul>
+                                <li><span class="bolder">Require all granted/denied</span>: permite o deniega de manera incondicional.</li>
+                                <li><span class="bolder">Require user [userid]</span>: permite el acceso solo a los usuarios nombrados.</li>
+                                <li><span class="bolder">Require group [group-name]</span>: permite el acceso solo a los usuarios que pertenecen al grupo referenciado.</li>
+                                <li><span class="bolder">Require valid-user</span>: todos los usuarios válidos.</li>
+                                <li><span class="bolder">Require ip [direcciónip]</span>: permite el acceso solo a la ip nombrada.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Orden de Lectura Runtime - Apache</h2></summary>
+                    <ul id="orden-lectura">
+                        <li>Los bloques &lt;Directory&gt; se leen primero.</li>
+                        <li>Los archivos .htaccess se leen al mismo tiempo que los bloques &lt;Directory&gt;, pero pueden sobrescribir o anular las opciones especificadas en los bloques &lt;Directory&gt; si esto es permitido a través de la opción AllowOverride.</li>
+                        <li>A continuación se leen las directivas &lt;Files&gt;.</li>
+                        <li>Finalmente, se leen las directivas &lt;Location&gt;.</li>
                     </ul>
                 </details>
             </section>

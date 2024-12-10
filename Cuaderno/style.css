@@ -114,3 +114,7 @@ summary > h2 {
     margin-top: 1.5rem;
     margin-bottom: 0.1rem;
 }
+
+.cursive{
+    font-style: italic;
+}
