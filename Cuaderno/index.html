@@ -10,6 +10,17 @@
 <body>
     <aside>
         <h1>Cuaderno de Aprendizaje</h1>
+        <h3>GitHub</h3>
+        <ul>
+            <li><a href="#stages-areas">Stages Areas</a></li>
+            <li><a href="#estados-ficheros">Estados de Ficheros</a></li>
+            <li><a href="#configuracion-inicial">Configuración Inicial</a></li>
+            <li><a href="#comandos-basicos">Comandos Básicos</a></li>
+            <li><a href="#poniendonos-en-marcha">Poniéndonos en marcha</a></li>
+            <li><a href="#ramas">Ramas</a></li>
+            <li><a href="#p-git-travesia">Travesía a través de Git</a></li>
+        </ul>
+        <h3>Servicio Web HTTP</h3>
         <ul>
             <li><a href="#stages-areas">Stages Areas</a></li>
             <li><a href="#estados-ficheros">Estados de Ficheros</a></li>
@@ -21,7 +32,7 @@
         </ul>
     </aside>
     <main>
-        <article id="art-git">
+        <!-- <article id="art-git">
             <h1>Git</h1><img id="img-sep" src="./img/separador.png"><h1>GitHub</h1>
             <section>
                 <details>
@@ -126,8 +137,140 @@
                     </p>
                 </details>
             </section>
+        </article> -->
+        <article id="art-http">
+            <h1>Servicio Web HTTP</h1>
+            <section>
+                <details>
+                    <summary><h2>¿Cómo Funciona?</h2></summary>
+                    <img src="./img/http.png" alt="HTTP">
+                    <ul id="como-funciona">
+                        <li><span class="underline bolder">CLIENTE</span> 
+                            <ul>
+                                <li>Solicita e interpreta el contenido.</li>
+                                <li>Renderiza en la pantalla el resultado.</li>
+                                <li>Interactúa con el usuario.</li>
+                            </ul>
+                        </li>   
+                        <li><span class="underline bolder">SERVIDOR</span>
+                            <ul>
+                                <li>Sirve contenido estático.</li>
+                                <li>Ejecuta programas para generar contenido dinámico (PHP).</li>
+                                <li>Autentica usuarios.</li>
+                                <li>Certificados SSL/TLS.</li>
+                                <li>Mediante extensiones genera contenido dinámico (Javascript, AJAX).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>GET vs POST</h2></summary>
+                    <h3 id="get-vs-post">GET</h3>
+                    <img src="./img/get.png" alt="GET">
+                    <h3>POST</h3>
+                    <img src="./img/post.png" alt="POST">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>HTTP vs HTTPS</h2></summary>
+                    <img id="http-https" src="./img/httpVShttps.png" alt="HTTP vs HTTPS">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Certificado SSL / TLS</h2></summary>
+                    <img id="certificado-ssl-tls" src="./img/certificado.jpg" alt="SSL / TLS">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Código de Estados</h2></summary>
+                    <ul id="codigos-estados">
+                        <li><span class="bolder">1xx</span> ➜ Informativo</li>
+                        <li><span class="bolder">2xx</span> ➜ Éxito</li>
+                        <li><span class="bolder">3xx</span> ➜ Redirección</li>
+                        <li><span class="bolder">4xx</span> ➜ Error del Cliente</li>
+                        <li><span class="bolder">5xx</span> ➜ Error del Servidor</li>                        
+                    </ul>
+                </details>
+            </section>
+        </article>
+        <article id="art-dns">
+            <h1>Servicio Web DNS</h1>
+            <section>
+                <details>
+                    <summary><h2>¿Qué es?</h2></summary>
+                    <ul id="que-es">
+                        <li><span class="underline bolder">DNS (Domain Name System) [Capa Aplicación]</span>
+                            <ul>
+                                <li>Su función es resolver nombres (dominios) legibles para las personas en identificadores binarios (direcciones IP) legibles para las máquinas</li>
+                                <li>El servidor DNS utiliza una base de datos distribuida y jerárquica que almacena información asociada a nombres de dominio.</li>
+                                <li>Utiliza el puerto UDP 53.</li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">https://es.deap.daw.org</span>
+                            <ul>
+                                <li>.org → dominio de nivel superior (TLD)</li>
+                                <li>daw → subdominio, dominio de segundo nivel.</li>
+                                <li>deap → subdominio, dominio de tercer nivel.</li>
+                                <li>es.deap.daw.org → hostname, nodo de nombre completo (FQDN)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>¿Cómo Funciona?</h2></summary>
+                    <img id="funcionamiento-dns" src="./img/funcionamientoDNS.jpeg" alt="DNS">
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Tipos de Registro</h2></summary>
+                    <ul>
+                        <li><span class="underline bolder">A</span> ➜ Traduce nombres a direcciones IPv4</li>
+                        <li><span class="underline bolder">AAAA</span> ➜ Traduce nombres a direcciones IPv6</li>
+                        <li><span class="underline bolder">CNAME</span> ➜ Define un alias a un nombre de dominio. Podemos acceder con diferente nombre a diferentes servicios como ftp o www</li>
+                        <li><span class="underline bolder">NS</span> ➜ Asocia servidores de nombres y dominio</li>
+                        <li><span class="underline bolder">MX</span> ➜ Indica los nombres de los servidores de correo del dominio</li>
+                        <li><span class="underline bolder">PTR</span> ➜ Traduce IP a nombre de dominio</li>
+                        <li><span class="underline bolder">SOA</span> ➜ Proporciona información sobre el servidor de nombres primario de la zona de autoridad</li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Resolución Directa VS Resolución Inversa</h2></summary>
+                    <ul id="resoluciones-directa-inversa">
+                        <li><span class="underline bolder">Resolución Directa</span>
+                            <ul>
+                                <li>Permite traducir un nombre a una dirección IP.</li>
+                            </ul>
+                        </li>
+                        <li><span class="underline bolder">Resolución Inversa</span>
+                            <ul>
+                                <li>Mediante la definición de registros PTR permite obtener el nombre que corresponde con una dirección IP.</li>
+                                <li>Se basa en el dominio in-addr.arpa.</li>
+                                <li>Se van añadiendo los diferentes números en la IP en sentido inverso.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </section>
+            <section>
+                <details>
+                    <summary><h2>Herramientas de Consultas DNS</h2></summary>
+                    <ul id="herramientas-consulta">
+                        <li><span class="bolder">nslookup</span> ➜ Permite realizar consultas DNS obteniendo información sobre nombres de dominio o direcciones IP.</li>
+                        <li><span class="bolder">dig</span> ➜ Herramienta de consulta DNS que nos proporciona información detallada sobre registros DNS.</li>
+                    </ul>
+                </details>
+            </section>
         </article>
     </main>
-    <script src="scripts.js"></script>
 </body>
 </html>
